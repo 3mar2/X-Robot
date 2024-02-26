@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../assets/colors/appColors';
+
+import '../assets/app_colors.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -9,11 +10,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            // transform: GradientTransform(),
             colors: [
               AppColors.color2,
               AppColors.color1,
@@ -21,23 +21,38 @@ class HomePage extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: (
-            Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Icon(
-              //   Icons.home,
-              // ),
-              Text(
-                "X-Robot",
-                style: TextStyle(
-                  fontSize: 50,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+              (Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  // Icon(
+                  //   Icons.home,
+                  // ),
+                  Text(
+                    "X-Robot",
+                    style: TextStyle(
+                      fontSize: 50,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("LogIn");
+                    },
+                    child: const Text("Start"),
+                  )
+                ],
               ),
             ],
-          )),
+          ),
         ),
       ),
     );

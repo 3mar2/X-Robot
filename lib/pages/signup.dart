@@ -1,18 +1,21 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import '../assets/app_colors.dart';
 
-class LogInPage extends StatefulWidget {
-  const LogInPage({Key? key}) : super(key: key);
+
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  State<LogInPage> createState() => _LogInPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LogInPageState extends State<LogInPage> {
-  final _passwordController = TextEditingController();
+class _SignUpPageState extends State<SignUpPage> {
+  final _firstNameController = TextEditingController();
+  final _lastNameController = TextEditingController();
   final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,19 +28,67 @@ class _LogInPageState extends State<LogInPage> {
               children: [
                 // image
                 // Image.asset(
-                //     "images/logo.png",
-                //     height: 150,
+                //   "images/logo.png",
+                //   height: 150,
                 // ),
                 const SizedBox(
                   height: 20,
                 ),
                 //title
                 const Text(
-                  "Login",
+                  "SignUp",
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 ),
+
                 const SizedBox(
                   height: 50,
+                ),
+
+                // First Name Text field
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: TextField(
+                        controller: _firstNameController,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          label: Text("First Name"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                // // Last Name
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: TextField(
+                        controller: _lastNameController,
+                        decoration: const InputDecoration(
+                          label: Text("Last Name"),
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
                 // Email
                 Padding(
@@ -59,6 +110,7 @@ class _LogInPageState extends State<LogInPage> {
                     ),
                   ),
                 ),
+
                 const SizedBox(
                   height: 10,
                 ),
@@ -86,12 +138,37 @@ class _LogInPageState extends State<LogInPage> {
                 const SizedBox(
                   height: 15,
                 ),
+                //Confirm Password
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: TextField(
+                        controller: _confirmPasswordController,
+                        obscureText: true,
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          label: Text("Confirm Password"),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(
+                  height: 25,
+                ),
+
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: GestureDetector(
                     onTap: () {
-                      // Navigator.of(context).pushNamed("/");
-                      log(_emailController.text);
+                      Navigator.of(context).pushNamed("/");
                     },
                     child: Container(
                       padding: const EdgeInsets.all(16),
@@ -107,7 +184,7 @@ class _LogInPageState extends State<LogInPage> {
                           borderRadius: BorderRadius.circular(12)),
                       child: const Center(
                           child: Text(
-                        "Login",
+                        "SignUp",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -117,19 +194,21 @@ class _LogInPageState extends State<LogInPage> {
                     ),
                   ),
                 ),
+
                 const SizedBox(
                   height: 25,
                 ),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Dont Have An Acc..? "),
+                    const Text("Already Have An Acc..? "),
                     GestureDetector(
                       onTap: () {
-                        Navigator.of(context).pushNamed("SignUp");
+                        Navigator.of(context).pushNamed("LogIn");
                       },
                       child: const Text(
-                        "SignUp",
+                        "LogIn",
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       ),
