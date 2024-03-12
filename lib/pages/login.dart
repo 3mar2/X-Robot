@@ -90,7 +90,7 @@ class _LogInPageState extends State<LogInPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: GestureDetector(
                     onTap: () {
-                      // Navigator.of(context).pushNamed("/");
+                      Navigator.of(context).pushNamed("CarControl");
                       log(_emailController.text);
                     },
                     child: Container(

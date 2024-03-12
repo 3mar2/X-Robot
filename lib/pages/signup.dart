@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../assets/app_colors.dart';
 
-
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
@@ -168,7 +167,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 25),
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed("/");
+                      Navigator.of(context).pushNamed("CarControl");
                     },
                     child: Container(
                       padding: const EdgeInsets.all(16),

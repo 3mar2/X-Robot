@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../assets/app_colors.dart';
 
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
