@@ -14,4 +14,5 @@ class AppColors {
   static const Color titleColor = Color(0xFF5c524f);
   static const Color color1 = Color(0xFFFFBBB0);
   static const Color color2 = Color(0xFF5594FE);
+  static const Color tabBarViewColor = Color(0xFFfdfdfd);
 }

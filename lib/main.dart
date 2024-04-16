@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_projects/pages/car_control.dart';
 import 'package:flutter_projects/pages/cartegory_info.dart';
 import 'package:flutter_projects/pages/home.dart';
+import 'package:flutter_projects/pages/home2.dart';
 import 'package:flutter_projects/pages/login.dart';
 import 'package:flutter_projects/pages/show_info.dart';
 import 'package:flutter_projects/pages/signup.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       // home: CarControl(),
       routes: {
         // '/': (ctx) => const HomePage(),
-        '/': (ctx) => const CategoriesScreen(),
+        '/': (ctx) =>  const HomePage2(),
         CategoryCarsScreen.screenRoute: (ctx) => const CategoryCarsScreen(),
         "LogIn": (ctx) => const LogInPage(),
         "SignUp": (ctx) => const SignUpPage(),

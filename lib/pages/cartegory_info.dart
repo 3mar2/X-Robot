@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../assets/app_colors.dart';
@@ -11,7 +10,7 @@ class CategoryCarsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final routeArgument =
         ModalRoute.of(context)!.settings.arguments as Map<String, String>;
-    final categoryId = routeArgument['id'];
+    // final categoryId = routeArgument['id'];
     final categoryTitle = routeArgument['title'];
     final categoryImageUrl = routeArgument['imageUrl'];
     final categorypara = routeArgument['para'];

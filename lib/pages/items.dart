@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../model/show_info_model.dart';
 
 // ignore: unnecessary_const, non_constant_identifier_names
